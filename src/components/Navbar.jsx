@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
-import { navLinks } from "../assets";
+import { navLinks } from "../constants/index";
 import { logo, menu, close } from "../assets";
 
 const Navbar = () => {
@@ -21,10 +21,25 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p>
-            Adrian <span>| JavaScript Mastery</span>
+          <p className="text-white text-[18px] font-bold cursor-pointer">
+            Adrian <span className="sm:block hidden">| JavaScript Mastery</span>
           </p>
         </Link>
+        <ul className="list-none hidden sm:flex flex-row gap-10">
+          {navLinks.map((Link) => (
+            <li
+              key={Link.id}
+              className={`${
+                active === Link.title ? "text-white" : "text-secondary"
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => setActive(Link.title)}
+            >
+              <a href={`#${Link.id}`}>{Link.title}</a>
+            </li>
+          ))}
+        </ul>
+
+        {/* mobile navigation bar */}
       </div>
     </nav>
   );
