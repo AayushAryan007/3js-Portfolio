@@ -37,3 +37,4 @@ const ComputersCanvas = () => {
 };
 
 export default Computers;
+// canvas internal tags not recogised
