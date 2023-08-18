@@ -39,3 +39,4 @@ const ComputersCanvas = () => {
 export default Computers;
 // canvas internal tags not recogised
 //flashligh apears on screen but constant motion
+//preload funtion not working from gltf
