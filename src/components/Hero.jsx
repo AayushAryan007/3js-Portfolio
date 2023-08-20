@@ -23,6 +23,8 @@ const Hero = () => {
         </div>
       </div>
       <ComputersCanvas />
+      {/* scroll framer motion gif */}
+      <div></div>
     </section>
   );
 };
